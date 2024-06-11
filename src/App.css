@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.header {
+  margin: 0;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card .list {
+  margin: 0;
+  padding: 0;
 }
+
+.listItem {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.listItem input{
+  margin-right: 0.6em;
+}
+
+.addBtn {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size:medium;
+  margin-top: 1rem;
+}
+
+.addBtn .oops {
+  visibility: hidden;
+}
+
+
+.addBtn:hover {
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+
+.addBtn:hover {
+  visibility: none;
+}
+
+@keyframes example {
+  0% {opacity: 1;}
+  50% {opacity: 0; transform: translateY(-10px)}
+  100% {opacity: 0;}
+}
+
+
+
+
+
