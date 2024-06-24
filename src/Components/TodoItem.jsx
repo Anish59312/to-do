@@ -1,13 +1,17 @@
 import React from 'react';
 
-const TodoItem = ({todo}) => {
+const TodoItem = ({todo, toggleTodo }) => {
     return (
         <li className='listItem'>
             <span>
-                <input type="checkbox"/>  
-                <span>{todo}</span>
+                <input type="checkbox" checked={todo.completed} onChange={() => toggleTodo(todo)}/>
+                {todo.completed ? (
+                    <span><strike>{todo.text}</strike></span>
+                ) : (
+                    <span>{todo.text}</span>
+                )}
             </span>
-            <p>...</p>
+            <span>...</span>
         </li>
     );
 };

@@ -5,10 +5,9 @@
   border: 1px solid #ccc;
   padding: 20px;
   width: 300px;
-
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: white;
   border-radius: 20px;
 }
@@ -18,6 +17,7 @@
   margin: 0;
   font-size: 1.3rem;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .card .list {
@@ -27,13 +27,22 @@
 
 .listItem {
  display: flex;
+ flex-direction: row;
  align-items: center;
  justify-content: space-between;
+ margin-bottom: 1.2rem;
+}
+
+.listItem span {
+  display: flex;
 }
 
 .listItem input{
-  margin-right: 0.6em;
+  margin-right: 0.8em;
+  width: 25px;
+  margin-top: 0.4rem;
 }
+
 
 .addBtn {
   width: 100%;
@@ -45,28 +54,85 @@
   margin-top: 1rem;
 }
 
-.addBtn .oops {
-  visibility: hidden;
+.modal-parent{
+  position: fixed;
+  z-index: 100;
+}
+
+.backdrop {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-color: rgba(0, 0, 0, 0.413); 
+}
+
+.add-task-modal {
+  min-height: 50px;
+  padding: 0px 10px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px #595959;
+  background-color: white;
+  border-radius: 10px; 
+  animation: slideIn 0.5s forwards; 
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+  width: 280px;
 }
 
 
-.addBtn:hover {
-  animation-name: example;
-  animation-duration: 2s;
+@keyframes slideIn {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
 
-
-.addBtn:hover {
-  visibility: none;
+.addTaskForm{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
 }
 
-@keyframes example {
-  0% {opacity: 1;}
-  50% {opacity: 0; transform: translateY(-10px)}
-  100% {opacity: 0;}
+.addTaskForm input{
+  border: none;
 }
 
+.addTaskForm input:focus{
+  outline: none;
+}
 
+.addTaskForm button {
+  border: none;
+  background-color: transparent;
+}
 
+#time {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
 
+#downloadbtn{
+  color: white;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
 

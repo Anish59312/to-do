@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Footer = () => {
-    return (<button className='addBtn'>Add Todo</button>);
+
+const Footer = ({ onClick }) => {
+
+    return (
+            <button className='addBtn' onClick={onClick}>Add Todo</button>
+    );
 }
 
 export default Footer;
